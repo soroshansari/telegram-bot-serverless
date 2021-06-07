@@ -13,7 +13,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
       DOMAIN: ${{secrets.PROD_DOMAIN}}
       API_KEY_EXAMPLE: ${{secrets.ROD_API_KEY_EXAMPLE}}
-      S3_URI: ${{secrets.PROD_SSS_URI}}
+      SSS_URI: ${{secrets.PROD_SSS_URI}}
 
     steps:
       - uses: actions/checkout@v1
@@ -25,10 +25,10 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Download `.serverless` state from S3
-        run: aws s3 sync s3://${{env.S3_URI}}/.serverless .serverless --delete
+        run: aws s3 sync s3://${{env.SSS_URI}}/.serverless .serverless --delete
 
       - name: Deploy to the serverless
         run: yarn deploy:prod
 
       - name: Upload `.serverless` state to S3
-        run: aws s3 sync .serverless s3://${{env.S3_URI}}/.serverless --delete
+        run: aws s3 sync .serverless s3://${{env.SSS_URI}}/.serverless --delete
