@@ -1,0 +1,38 @@
+service: telegram-bot
+
+plugins:
+  - serverless-offline
+  - serverless-domain-manager
+  - serverless-webpack
+
+package:
+  individually: true
+
+custom:
+  secrets: ${file(./secrets.yml):${self:provider.stage}}
+  customDomain:
+    domainName: ${self:custom.secrets.DOMAIN}
+    basePath: ""
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+  webpack:
+    webpackConfig: "webpack.config.js"
+    packager: "yarn"
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'develop'}
+  apiGateway:
+    shouldStartNameWithService: true
+  environment:
+    API_KEY_EXAMPLE: ${self:custom.secrets.API_KEY_EXAMPLE}
+
+functions:
+  main:
+    handler: src/chats/index.handler
+    events:
+      - http:
+          method: any
+          path: /chats/{any+}
