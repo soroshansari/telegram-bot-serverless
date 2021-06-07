@@ -24,7 +24,7 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Download `.serverless` state from S3
-        run: aws s3 sync s3:${{secrets.S3_URI}}/.serverless .serverless --delete
+        run: aws s3 sync s3://${{secrets.S3_URI}}/.serverless .serverless --delete
 
       - name: Deploy to the serverless
         run: yarn deploy:prod
