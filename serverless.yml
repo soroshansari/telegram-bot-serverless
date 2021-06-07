@@ -1,24 +1,12 @@
 service: telegram-bot
 
+package:
+  individually: true
+
 plugins:
   - serverless-offline
   - serverless-domain-manager
   - serverless-webpack
-
-package:
-  individually: true
-
-custom:
-  secrets: ${file(./secrets.yml):${self:provider.stage}}
-  customDomain:
-    domainName: ${self:custom.secrets.DOMAIN}
-    basePath: ""
-    stage: ${self:provider.stage}
-    createRoute53Record: true
-  webpack:
-    webpackConfig: "webpack.config.js"
-    packager: "yarn"
-    includeModules: true
 
 provider:
   name: aws
@@ -27,7 +15,7 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
   environment:
-    API_KEY_EXAMPLE: ${self:custom.secrets.API_KEY_EXAMPLE}
+    API_KEY_EXAMPLE: ${self:custom.secrets.API_KEY_EXAMPLE.${self:provider.stage}}
 
 functions:
   main:
@@ -36,3 +24,27 @@ functions:
       - http:
           method: any
           path: /chats/{any+}
+
+custom:
+  customDomain:
+    domainName: ${self:custom.secrets.DOMAIN.${self:provider.stage}}
+    basePath: ""
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+  webpack:
+    webpackConfig: "webpack.config.js"
+    packager: "yarn"
+    includeModules: true
+  secrets:
+    stages:
+      - develop
+      - staging
+      - production
+    DOMAIN:
+      develop: ${file(./secrets.yml):DOMAIN}
+      staging: ${env:DOMAIN}
+      production: ${env:DOMAIN}
+    API_KEY_EXAMPLE:
+      develop: ${file(./secrets.yml):API_KEY_EXAMPLE}
+      staging: ${env:API_KEY_EXAMPLE}
+      production: ${env:API_KEY_EXAMPLE}

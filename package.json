@@ -9,7 +9,9 @@
   "scripts": {
     "build": "webpack",
     "dev": "sls offline",
-    "deploy:prod": "sls deploy --stage=production"
+    "deploy:prod": "sls deploy --stage=production",
+    "deploy:staging": "sls deploy --stage=staging",
+    "deploy:dev": "sls deploy --stage=develop"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
