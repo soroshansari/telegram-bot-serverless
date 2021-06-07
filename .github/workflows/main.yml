@@ -11,8 +11,6 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
       AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      DOMAIN: ${{env.DOMAIN}}
-      API_KEY_EXAMPLE: ${{env.API_KEY_EXAMPLE}}
 
     steps:
       - uses: actions/checkout@v1
