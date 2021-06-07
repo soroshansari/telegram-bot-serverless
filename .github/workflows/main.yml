@@ -11,9 +11,9 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
       AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      DOMAIN: ${{secrets.DOMAIN}}
-      API_KEY_EXAMPLE: ${{secrets.API_KEY_EXAMPLE}}
-      S3_URI: ${{secrets.S3_URI}}
+      DOMAIN: ${{secrets.PROD_DOMAIN}}
+      API_KEY_EXAMPLE: ${{secrets.ROD_API_KEY_EXAMPLE}}
+      S3_URI: ${{secrets.ROD_S3_URI}}
 
     steps:
       - uses: actions/checkout@v1
