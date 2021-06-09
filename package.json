@@ -34,7 +34,9 @@
   },
   "dependencies": {
     "aws-lambda": "^1.0.6",
+    "lambda-request-handler": "^0.5.1-alpha1",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "telegraf": "^4.3.0"
   }
 }

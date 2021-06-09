@@ -28,12 +28,21 @@ provider:
     shouldStartNameWithService: true
   environment:
     TELEGRAM_TOKEN: ${self:custom.secrets.TELEGRAM_TOKEN}
+    BOT_HOOK_PATH: ${self:custom.secrets.BOT_HOOK_PATH}
 
 functions:
-  main:
-    handler: src/handlers/chats/index.handler
+  # main:
+  #   handler: src/handlers/chats/index.handler
+  #   events:
+  #     - http:
+  #         method: any
+  #         path: /chats/{any+}
+  #         cors: true
+
+  secondBot:
+    handler: src/handlers/second-bot/index.handler
     events:
       - http:
           method: any
-          path: /chats/{any+}
+          path: /second-bot
           cors: true
