@@ -1363,10 +1363,10 @@
     ramda "^0.26.1"
     semver "^6.1.1"
 
-"@serverless/dashboard-plugin@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@serverless/dashboard-plugin/-/dashboard-plugin-5.2.0.tgz#9d1385f01e1f7aea712abe45edc1dd3c1f7713c3"
-  integrity sha512-90LEgeWJioV1fb3Z7eDvPFeNFRiieszTXWjEbp1z1Afh8U1QyDSureTg/oHNiTkUlrtFYWRZ5ta4Duf7YFe7QA==
+"@serverless/dashboard-plugin@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@serverless/dashboard-plugin/-/dashboard-plugin-5.3.0.tgz#2b789018b09a1a1f65a48f8bc739305ff3edf8da"
+  integrity sha512-JOtFIVLHyeTAtdoK2gFEAAMNsGemszQr6rwhTOg0bV6pgeLmfufL4nz9rAtSj5m2oZnVnH46+P1aVZlwUXNThQ==
   dependencies:
     "@serverless/event-mocks" "^1.1.1"
     "@serverless/platform-client" "^4.2.3"
@@ -1635,6 +1635,11 @@
   resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.76.tgz#a20191677f1f5e32fe1f26739b1d6fbbea9cf636"
   integrity sha512-lCTyeRm3NWqSwDnoji0z82Pl0tsOpr1p+33AiNeidgarloWXh3wdiVRUuxEa+sY9S5YLOYGz5X3N3Zvpibvm5w==
 
+"@types/bluebird@*":
+  version "3.5.35"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.35.tgz#3964c48372bf62d60616d8673dd77a9719ebac9b"
+  integrity sha512-2WeeXK7BuQo7yPI4WGOBum90SzF/f8rqlvpaXx4rjeTmNssGRDHWf7fgDUH90xMB3sUOu716fUK5d+OVx0+ncQ==
+
 "@types/cacheable-request@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@types/cacheable-request/-/cacheable-request-6.0.1.tgz#5d22f3dded1fd3a84c0bbeb5039a7419c2c91976"
@@ -1744,6 +1749,14 @@
   resolved "https://registry.yarnpkg.com/@types/request-promise-native/-/request-promise-native-1.0.17.tgz#74a2d7269aebf18b9bdf35f01459cf0a7bfc7fab"
   integrity sha512-05/d0WbmuwjtGMYEdHIBZ0tqMJJQ2AD9LG2F6rKNBGX1SSFR27XveajH//2N/XYtual8T9Axwl+4v7oBtPUZqg==
   dependencies:
+    "@types/request" "*"
+
+"@types/request-promise@^4.1.47":
+  version "4.1.47"
+  resolved "https://registry.yarnpkg.com/@types/request-promise/-/request-promise-4.1.47.tgz#62f58a52476ef6cfe4f38d689cb826959a33a268"
+  integrity sha512-eRSZhAS8SMsrWOM8vbhxFGVZhTbWSJvaRKyufJTdIf4gscUouQvOBlfotPSPHbMR3S7kfkyKbhb1SWPmQdy3KQ==
+  dependencies:
+    "@types/bluebird" "*"
     "@types/request" "*"
 
 "@types/request@*", "@types/request@^2.48.3":
@@ -2201,10 +2214,10 @@ aws-sdk@*, aws-sdk@^2.756.0, aws-sdk@^2.834.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.919.0:
-  version "2.922.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.922.0.tgz#4568be067dceaaeda5d2d5a7e2f22666687f0b32"
-  integrity sha512-SufbR5TTCK94Zk/xIv4v/m0MM9z+KW999XnjXOyNWGFGHP9/FArjtHtq69+a3KpohYBR1dBj8wUhVjbClmQIBA==
+aws-sdk@^2.923.0:
+  version "2.924.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.924.0.tgz#daefcd11729638d9c9279633a0cc5ba1c98fee64"
+  integrity sha512-EwJmZDNhEY1/hrihile8+EdrYrT5VKcLuL5F+OA9L+AYWxNou0i4fP36N5KFtMikkAGB31qhAuRDPcr132RnUw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2380,7 +2393,7 @@ blob@0.0.5:
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
   integrity sha512-gaqbzQPqOoamawKg0LGVd7SzLgXS+JH61oWprSLH+P+abTczqJbhTR8CmJ2u9/bUYNmHTGJx/UEmn6doAvvuig==
 
-bluebird@^3.7.2:
+bluebird@^3.5.0, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -3282,15 +3295,15 @@ dot-qs@0.2.0:
   resolved "https://registry.yarnpkg.com/dot-qs/-/dot-qs-0.2.0.tgz#d36517fe24b7cda61fce7a5026a0024afaf5a439"
   integrity sha1-02UX/iS3zaYfznpQJqACSvr1pDk=
 
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
+
 dotenv@^8.2.0:
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
   integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
-
-dotenv@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.2.tgz#dacc20160935a37dea6364aa1bef819fb9b6ab05"
-  integrity sha512-I9OvvrHp4pIARv4+x9iuewrWycX6CcZtoAu1XrzPxc5UygMJXJZYmBsynku8IkrJwgypE5DGNjDPmPRhDCptUg==
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -6372,7 +6385,17 @@ request-promise-native@^1.0.8:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.88.0:
+request-promise@^4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/request-promise/-/request-promise-4.2.6.tgz#7e7e5b9578630e6f598e3813c0f8eb342a27f0a2"
+  integrity sha512-HCHI3DJJUakkOr8fNoCc73E5nU5bqITjOYFMDrKHYOXWXrgD/SBaC7LjwuPymUprRyuF06UK7hd/lMHkmUXglQ==
+  dependencies:
+    bluebird "^3.5.0"
+    request-promise-core "1.1.4"
+    stealthy-require "^1.1.1"
+    tough-cookie "^2.3.3"
+
+request@^2.88.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -6688,19 +6711,19 @@ serverless-webpack@^5.5.0:
   optionalDependencies:
     ts-node ">= 8.3.0"
 
-serverless@^2.44.0:
-  version "2.44.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-2.44.0.tgz#9481fd434531b55f563ee7815c2f6cde772cb67d"
-  integrity sha512-hNyjF1i41U0KouPG7JRWXw4oT2+ARjEBIOXPcmkoyg5yr2FEDce0gZGpD9BQqFHyihDZMGti/+KrZrWPiv27MQ==
+serverless@^2.45.1:
+  version "2.45.1"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-2.45.1.tgz#a353848fc845737b52322ddb82c616780dc71372"
+  integrity sha512-OjKJ3r/DL0uXZfG+33uhSxiQgDvOH38k6eTGs6DISq2QIN03tV4C8BIhAc5ggmySSNySNo2vrH/5CoZbfCQbKg==
   dependencies:
     "@serverless/cli" "^1.5.2"
     "@serverless/components" "^3.11.0"
-    "@serverless/dashboard-plugin" "^5.2.0"
+    "@serverless/dashboard-plugin" "^5.3.0"
     "@serverless/utils" "^5.2.0"
     ajv "^6.12.6"
     ajv-keywords "^3.5.2"
     archiver "^5.3.0"
-    aws-sdk "^2.919.0"
+    aws-sdk "^2.923.0"
     bluebird "^3.7.2"
     boxen "^5.0.1"
     cachedir "^2.3.0"
@@ -6710,7 +6733,7 @@ serverless@^2.44.0:
     d "^1.0.1"
     dayjs "^1.10.5"
     decompress "^4.2.1"
-    dotenv "^9.0.2"
+    dotenv "^10.0.0"
     essentials "^1.1.1"
     fastest-levenshtein "^1.0.12"
     filesize "^6.3.0"
